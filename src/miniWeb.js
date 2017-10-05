@@ -2,6 +2,7 @@
 // define your Request, Response and App objects here
 
 const net = require('net');
+const fs = require('fs');
 
 class Request {
     constructor(s) {
@@ -189,7 +190,7 @@ class App{
         if(req.headers['Host'] === undefined){
             res.send(400, "Request denied");
         }
-        const callback = this.route[res.path];
+        const callback = this.route[req.path];
         if(callback === undefined){
             res.send(404, "Path does not exist");
         }else{
