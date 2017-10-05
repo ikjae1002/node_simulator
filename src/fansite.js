@@ -26,7 +26,7 @@ app.get('/image3.gif', function(req, res) {
     res.sendFile('/img/bmo1.gif');
 });
 app.get('/home', function(req, res) {
-    res.redirect(301, '/');
+    res.sendFile('/html/test.html');
 });
 
 app.listen(8080, '127.0.0.1');
